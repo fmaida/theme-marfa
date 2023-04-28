@@ -242,7 +242,8 @@ span.separator {
 span.divider {
 	display: block;
 	width: 100%;
-	background-color: #eee;
+	/*background-color: #eee;*/
+	background: rgba(255, 255, 255, 0);
 	height: 1px;
 	margin: 0 auto;
 }
