@@ -5,10 +5,10 @@
         <img id="avatar" class="u-photo" src="{{ .Site.Author.avatar }}" width="96" height="96" />
       </a>
       <h1 class="p-name" rel="me">{{ .Site.Author.name }}</h1>
-      {{ $description := .Site.Params.description | safeHTML }}
+      {{ $description := .Site.Params.description }}
       {{ $description := replace $description "Follow" "Segui" }}
       {{ $description := replace $description "on" "su" }}
-      <h4 class="p-role">{{ $description }}</h4>
+      <h4 class="p-role">{{ $description | safeHTML }}</h4>
     </header>
   </section>
 </div>
