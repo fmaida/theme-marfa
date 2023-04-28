@@ -7,9 +7,9 @@
 		{{ if .Page.Params.redirect }}
 			<a href="{{ .Page.Params.redirect }}">{{ .Name }}</a>
 		{{ else }}
-			<a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+			<a href="{{ .URL | relLangURL | safeURL }}">{{ .Name | replace "Archive" "Archivi" | replace "Photos" "Foto" | replace "Replies" "Risposte" }}</a>
 		{{ end }}
 	{{ end }}
 
-  <a class="cta" href="https://micro.blog/{{ .Site.Author.username }}" rel="me">{{ T "Also on" }} Micro.blog</a>
+  <a class="cta" href="https://micro.blog/{{ .Site.Author.username }}" rel="me">Anche su Micro.blog</a>
 </nav>
