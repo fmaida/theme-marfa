@@ -7,7 +7,11 @@
 		{{ if .Page.Params.redirect }}
 			<a href="{{ .Page.Params.redirect }}">{{ .Name }}</a>
 		{{ else }}
-			<a href="{{ .URL | relLangURL | safeURL }}">{{ .Name | replace "Archive" "Archivi" | replace "Photos" "Foto" | replace "Replies" "Risposte" }}</a>
+			{{ $name := .Name }}
+			{{ $name := replace $name "Archive" "Archivi" }}
+			{{ $name := replace $name "Photos" "Foto" }}
+			{{ $name := replace $name "Replies" "Risposte" }}
+			<a href="{{ .URL | relLangURL | safeURL }}">{{ $name }}</a>
 		{{ end }}
 	{{ end }}
 
